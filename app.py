@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from src.cluster_model import load_data, preprocess_text, cluster_texts, get_top_keywords_per_cluster
+from cluster_model import load_data, preprocess_text, cluster_texts, get_top_keywords_per_cluster
 
 st.set_page_config(page_title="📚 Research Article Clustering", layout="centered")
 st.title("📚 Research Paper Clustering using KMeans")
