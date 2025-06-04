@@ -1,9 +1,15 @@
 import pandas as pd
 import nltk
+import os
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
 
-nltk.download('stopwords')
+# Safe stopwords download (only if not already available)
+nltk_data_path = os.path.join(os.path.expanduser("~"), "nltk_data")
+stopwords_path = os.path.join(nltk_data_path, "corpora", "stopwords")
+if not os.path.exists(stopwords_path):
+    nltk.download("stopwords", download_dir=nltk_data_path)
+
 from nltk.corpus import stopwords
 
 def load_data(path):
